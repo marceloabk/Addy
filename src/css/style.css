@@ -13,6 +13,7 @@ body {
 	font-family: 'Muli', sans-serif;
 
 }
+
 .form-control{
 	background-color: rgba(221, 226, 227, 0.2);
 	border: solid 1px #E4E4E4;
@@ -24,6 +25,7 @@ body {
 	top: 20px;
 	right:30px;
 }
+
 .sidebar{
 	position: absolute;
 	left: 10px;
@@ -39,10 +41,12 @@ body {
 .info .bar{
 	margin-bottom: 15px;
 }
+
 .info .heading{
 	text-transform: uppercase;
 	opacity: 0.6;
 }
+
 .info .content {
 	font-weight: 800;
 	font-size: 18px;

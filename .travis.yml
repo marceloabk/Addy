@@ -1,11 +1,7 @@
-sudo: required
-
-language: node_js
-node_js:
-  - "0.10"
-
+language: python
+python:
+  - '3.6'
 install:
-  - npm install -g eslint
-
+  - pip3 install coala-bears
 script:
-  - npm run lint
+  - coala
