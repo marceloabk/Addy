@@ -17,4 +17,4 @@ deploy:
   repo: marceloabk/addy-web
   target_branch: master
   on:
-    branch: master
+    branch: travis
