@@ -5,8 +5,7 @@
   "main": "index.js",
   "scripts": {
     "lint": "eslint /src",
-    "test": "echo \"Error: no test specified\" && exit 1"
-
+    "test": "karma start"
   },
   "repository": {
     "type": "git",
@@ -17,7 +16,6 @@
   "bugs": {
     "url": "https://github.com/marceloabk/Addy/issues"
   },
-
   "homepage": "https://github.com/marceloabk/Addy#readme",
   "devDependencies": {
     "gulp": "^3.9.1",
@@ -26,6 +24,8 @@
     "gulp-imagemin": "^3.4.0",
     "gulp-size": "^2.1.0",
     "gulp-uglify": "^3.0.0",
+    "jasmine-core": "^2.8.0",
+    "karma-jasmine": "^1.1.0",
     "require-dir": "^0.3.2"
   }
 }
