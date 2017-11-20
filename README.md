@@ -1,46 +1,73 @@
-# <img src="https://github.com/Addy-Smart-Addresses/Addy/blob/master/img/logo.png" alt="Addy" height="42" width="42"></img>   Addy
-Addy is a web app that enhances the addressing system of the world. Instead of remembering long addresses, Addy generates a unique 7-digit code based on the latitudinal and longitudinal coordinates of any position. The code is so accurate that every building in the world has been assigned a different 'Addy' with a minimum distance of 11.132 meters.
+# <img src="https://github.com/Addy-Smart-Addresses/Addy/blob/master/img/logo.png" alt="Addy" height="42" width="42"&gt;</img&gt; Addy
 
-![Landing Page](readme_assets/home.png)
+O Addy é uma aplicação que tenta melhorar o sistema de endereçamento do mundo. Ele gera
+um código alfanumérico de 8 caracteres baseados na latitude e longitude de qualquer posição
+no globo.
 
-<strong>Tech Stack for this project</strong>
-<ul>
-  <li>HTML5</li>
-  <li>CSS3</li>
-  <li>JavaScript</li>
-  <li>BootStrap 3</li>
-  <li>Google Maps Places API</li>
-  <li>Google Maps Geocoder API Used</li>
-</ul>
+## Integrantes
 
-## Gitter channel link
-https://gitter.im/Addy-Smart-Addresses
+Marcelo Cristiano - 13/0143901
+Indiara Duarte - 14/0022325
 
-## Contribution Guidelines
-https://github.com/Addy-Smart-Addresses/Addy/wiki/Contribution-Guidelines
+## Links para os serviços de deploy e CI
 
-## Getting Started with Contributing:
-1. After forking the project, git clone this repository onto your local environment:
-```bash
-git clone https://github.com/bluetch/shopee_design.git
-```
-2. Create a separate Git branch
-```bash
-git branch <your_new_branch_name>
-```
-3. Git checkout your branch
-```bash
-git checkout <your_new_branch_name>
-```
-4. Open up the project in your favorite code editor (e.g. Atom).
-5. Make your changes.
-6. Git add and commit your changes.
-```bash
-git add <file_name>
-git commit -m <insert_commit_comment>
-```
-7. Git push your changes as well as your new branch.
-```bash
-git push -u origin <your_branch_name>
-```
-8. Go to the GitHub repository and submit a Pull Request.
+O deploy do Addy foi feito via github pages em um repositório separado:
+
+https://github.com/marceloabk/addy-web
+https://marceloabk.github.io/addy-web/
+
+A integração e deploy continuo foram feitos via travis:
+
+https://travis-ci.org/marceloabk/Addy
+
+## Links adicionais
+
+O pack do projeto foi feito via npm e pode ser encontrado no repositório do npm:
+
+https://www.npmjs.com/package/addy
+
+## Executando o projeto
+
+A imagem a seguir é do trabalho que foi proposto para a disciplina:
+
+<img src="https://github.com/Addy-Smart-Addresses/Addy/blob/master/img/proposta.png" alt="Addy" height="42" width="42"&gt;</img&gt;
+
+### CI
+
+O CI utilizado foi o travis. Ele tem como script o coala como ferramenta de lintter e o mocha como ferramenta de teste.
+
+Ele é executado em todo pull request e em toda atualização de branch mas somente se existe o .trvis.yml.
+
+Ele também executa o deploy continuo. Toda vez que a branch travis é atualizada ele dispara o trigger de deploy e envia a pasta "src/build" para o repositório "marceloabk/addy-web" que é onde está configurado o github pages.
+
+### ENV
+
+Para ambiente foi escolhido o Docker. O Dockerfile cria um ambiente com a base na última imagem disponível para node.js e com todas as dependências do projeto (package.json, gulp, mocha).
+
+O docker-compose levanta dois containers. Uma versão de desenvolvimento na porta 8000 e um que simula a versão de produção na porta 8001.
+
+Tendo o docker e o docker-compose instalados, só é necessário rodar o seguinte comando:
+
+docker-compose up --build
+
+A versão de desenvolvimento só será atualizada se buildar a imagem. A versão de desenvolvimento é atualizada com os arquivos do host.
+
+### Build
+
+O build roda automaticamente junto com o docker-compose. Para rodar de maneira separada:
+
+cd src/
+gulp
+
+O gulp irá minimizar os *.js, *.css, *.html e também vai tentar otimizar as imagens do projeto.
+
+O gulp também tem uma task para o webpack, que se caso existissem mais arquivos javascript no projeto, ele juntaria todos em um arquivo só chamado script.js.
+
+### Pack
+
+O pack foi feito via npm. Para utilizado apenas rode:
+
+npm init
+npm install addy
+
+Ela irá gerar um node_modules e o Addy estará dentro desse node_modules.
