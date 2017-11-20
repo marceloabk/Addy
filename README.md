@@ -1,36 +1,35 @@
-# <img src="https://github.com/Addy-Smart-Addresses/Addy/blob/master/img/logo.png" alt="Addy" height="42" width="42"&gt;</img&gt; Addy
-
+# <img src="https://github.com/Addy-Smart-Addresses/Addy/blob/master/img/logo.png" alt="Addy" height="42" width="42"></img>   Addy
 O Addy é uma aplicação que tenta melhorar o sistema de endereçamento do mundo. Ele gera
 um código alfanumérico de 8 caracteres baseados na latitude e longitude de qualquer posição
 no globo.
 
 ## Integrantes
 
-Marcelo Cristiano - 13/0143901
-Indiara Duarte - 14/0022325
+    Marcelo Cristiano - 13/0143901
+    Indiara Duarte - 14/0022325
 
 ## Links para os serviços de deploy e CI
 
 O deploy do Addy foi feito via github pages em um repositório separado:
 
-https://github.com/marceloabk/addy-web
-https://marceloabk.github.io/addy-web/
+    https://github.com/marceloabk/addy-web
+    https://marceloabk.github.io/addy-web/
 
 A integração e deploy continuo foram feitos via travis:
 
-https://travis-ci.org/marceloabk/Addy
+    https://travis-ci.org/marceloabk/Addy
 
 ## Links adicionais
 
 O pack do projeto foi feito via npm e pode ser encontrado no repositório do npm:
 
-https://www.npmjs.com/package/addy
+    https://www.npmjs.com/package/addy
 
 ## Executando o projeto
 
-A imagem a seguir é do trabalho que foi proposto para a disciplina:
+A imagem a seguir representa a proposta feita para o trabalho final da disciplina:
 
-<img src="https://github.com/Addy-Smart-Addresses/Addy/blob/master/img/proposta.png" alt="Addy" height="42" width="42"&gt;</img&gt;
+<center><img src="https://raw.githubusercontent.com/marceloabk/Addy/entrega_final_gcs/readme_assets/proposta.jpg" alt="Addy"></img></center>
 
 ### CI
 
@@ -48,7 +47,7 @@ O docker-compose levanta dois containers. Uma versão de desenvolvimento na port
 
 Tendo o docker e o docker-compose instalados, só é necessário rodar o seguinte comando:
 
-docker-compose up --build
+    docker-compose up --build
 
 A versão de desenvolvimento só será atualizada se buildar a imagem. A versão de desenvolvimento é atualizada com os arquivos do host.
 
@@ -56,8 +55,8 @@ A versão de desenvolvimento só será atualizada se buildar a imagem. A versão
 
 O build roda automaticamente junto com o docker-compose. Para rodar de maneira separada:
 
-cd src/
-gulp
+    cd src/
+    gulp
 
 O gulp irá minimizar os *.js, *.css, *.html e também vai tentar otimizar as imagens do projeto.
 
@@ -67,7 +66,7 @@ O gulp também tem uma task para o webpack, que se caso existissem mais arquivos
 
 O pack foi feito via npm. Para utilizado apenas rode:
 
-npm init
-npm install addy
+    npm init
+    npm install addy
 
 Ela irá gerar um node_modules e o Addy estará dentro desse node_modules.
