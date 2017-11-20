@@ -1,5 +1,5 @@
-development = '/usr/src';
-production = '/usr/src/build';
+development = '../src';
+production = '../src/build';
 
 module.exports = {
 	optimize: {

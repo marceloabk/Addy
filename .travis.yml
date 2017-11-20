@@ -1,11 +1,22 @@
-sudo: required
-
-language: node_js
-node_js:
-  - "0.10"
-
+language: python
+python:
+  - '3.6'
 install:
-  - npm install -g eslint
-
+  - pip3 install coala-bears
+  - npm install mocha -g
 script:
-  - npm run lint
+  - coala
+  - mocha src/test/
+before_deploy:
+  - npm install
+  - npm install gulp -g
+  - cd src/ && gulp
+deploy:
+  provider: pages
+  skip_cleanup: true
+  github_token: $GITHUB_TOKEN # Set in travis-ci.org dashboard
+  local_dir: build
+  repo: marceloabk/addy-web
+  target_branch: master
+  on:
+    branch: travis

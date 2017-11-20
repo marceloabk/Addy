@@ -1,0 +1,21 @@
+[global]
+bears = coalaBear
+files += **.css, **.js, **.md
+ignore = node_modules/**
+
+[linecount]
+bears = LineCountBear
+files += **.js, **.md
+ignore = node_modules/**
+max_lines_per_file = 600
+
+[spacing]
+bears = SpaceConsistencyBear
+files += **.js, **.css
+ignore = node_modules/**
+use_spaces = False
+
+# [html]
+# bears = HTMLLintBear
+# ignore = node_modules/**
+# files = **.html

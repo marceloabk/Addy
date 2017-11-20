@@ -1,3 +1,3 @@
-var gulp = require('gulp');
+var gulp = require('gulp')
 
-gulp.task('default', ['optimize:css', 'optimize:html', 'optimize:js', 'optimize:images']);
+gulp.task('default', ['optimize:css', 'optimize:html', 'optimize:js', 'optimize:images'])
