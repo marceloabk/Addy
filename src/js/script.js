@@ -95,11 +95,11 @@ codeAddress = function () {
 	});
 };
 
-codebackconvert = function(d) {
+function codebackconvert(d) {
 	return parseInt(d, 36);
 };
 
-codeconvert = function(d) {
+function codeconvert(d) {
 	return (+d).toString(36).toUpperCase();
 };
 
