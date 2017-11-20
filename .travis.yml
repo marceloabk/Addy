@@ -3,5 +3,7 @@ python:
   - '3.6'
 install:
   - pip3 install coala-bears
+  - npm install mocha -g
 script:
   - coala
+  - mocha
